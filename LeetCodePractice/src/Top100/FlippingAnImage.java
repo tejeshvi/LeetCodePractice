@@ -7,11 +7,13 @@ public class FlippingAnImage {
 		int[][] grid= new int[][] {{1,1,0},{1,0,1},{0,0,0}};
 	}
 	public static int[][] flipAndInvertImage(int[][] A) {
-		for(int i=0;i<A.length;i++)
+		int n =A.length;
+		for(int[] row : A)
 		{
-			for(int j=0;j<A.length;j++)
+			for(int i=0;i<n/2;i++)
 			{
-				
+				if(row[i]==row[n-i-1])
+					row[i]=row[n-1-i]^1;
 			}
 		}
         return A;
